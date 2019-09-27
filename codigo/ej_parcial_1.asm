@@ -9,16 +9,16 @@
   * reescribirlo ordenado de mayor a menor a partir de la direccion Vec2. 
   * Los números son enteros sin signo y los vectores no se solapan en ninguna posición. */
   
-  .EQU SIZE=25 ;largo del vector
-  .DEF INITL=R16
-  .DEF INITH=R17
-  .DEF CONTADOR=R18
-  .DEF V_JMENOS1=R19
-  .DEF V_J=R20
-  .DEF LARGO=R21
+	.EQU SIZE=25 ;largo del vector
+	.DEF INITL=R16
+	.DEF INITH=R17
+	.DEF CONTADOR=R18
+	.DEF V_JMENOS1=R19
+	.DEF V_J=R20
+	.DEF LARGO=R21
 
 	.DSEG
-	.ORG 0x0300 ;declaro los vectores en External SRAM
+	.ORG 0x0900 ;declaro los vectores en External SRAM
 VEC1: .BYTE SIZE
 VEC2: .BYTE SIZE
 
@@ -26,13 +26,13 @@ VEC2: .BYTE SIZE
 	RJMP MAIN
 
 MAIN:
-LDI LARGO,SIZE
-LDI YL, LOW(VEC1) 
-LDI YH, HIGH(VEC1) ;apunto con Y a VEC1
+	LDI LARGO,SIZE
+	LDI YL, LOW(VEC1) 
+	LDI YH, HIGH(VEC1) ;apunto con Y a VEC1
 
-LDI INITL,LOW(VEC1) ;guardo la dirección de memoria de VEC1 
-LDI INITH,HIGH(VEC1)
-LDI CONTADOR,0 ;inicializo el contador de mi loop 
+	LDI INITL,LOW(VEC1) ;guardo la dirección de memoria de VEC1 
+	LDI INITH,HIGH(VEC1)
+	LDI CONTADOR,0 ;inicializo el contador de mi loop 
 
 
 LOOP1:
