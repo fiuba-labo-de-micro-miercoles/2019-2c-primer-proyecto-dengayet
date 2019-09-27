@@ -3,6 +3,7 @@
  *
  *  Created: 9/26/2019 11:09:49 PM
  *   Author: denise
+ *	micro: atmega328p
  */ 
 
  /* enunciado: dado un vector de 25 números en memoria RAM externa ubicado a partir de la dirección Vec1, 
@@ -18,7 +19,7 @@
 	.DEF LARGO=R21
 
 	.DSEG
-	.ORG 0x0900 ;declaro los vectores en External SRAM
+	.ORG 0x0300 ;debería declarar los vectores en External SRAM, a partir de 0x900
 VEC1: .BYTE SIZE
 VEC2: .BYTE SIZE
 
